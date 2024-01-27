@@ -10,6 +10,7 @@ stage("stage-1"){
 steps{
 sh "rm -rf *"
 sh "mkdir new-dir-1"
+  echo "this is 23Q1 branch"
 }
 }
 stage("wsp"){
