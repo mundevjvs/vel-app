@@ -1,24 +1,21 @@
 pipeline{
 agent{
 label{
-label "slave-1"
-customWorkspace "/mnt/workspace-1"
+label "built-in"
+customWorkspace "/mnt/assign-5"
 }
+environment{
+url = https://github.com/mundevjvs/new-repo-123.git
 }
 stages{
-stage("stage-1"){
+stage("clone-repo"){
 steps{
-sh "rm -rf *"
-sh "mkdir new-dir-1"
-}
-}
-stage("wsp"){
-steps{
-dir("/mnt/data"){
-sh "rm -rf *"
-sh "mkdir wsp-dir-1"
+sh "rm-rf *"
+sh "git clone $url"
 }
 }
 }
 }
+
+
 }
